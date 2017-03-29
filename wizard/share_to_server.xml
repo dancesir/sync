@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="share_to_server_form_view">
+            <field name="name">share.to.server.form</field>
+            <field name="model">share.to.server</field>
+            <field name="arch" type="xml">
+                <form string="同步服务器信息">
+                    <label string="同步服务器信息"/>
+                    <group>
+                        <group>
+                            <field name="server_name" widget="many2many_tags"/>
+                            <field name="share_type"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <!--<button name="upload_to_server_multi_thread" string="开始同步" type="object" class="oe_highlight"/>-->
+                    <button name="upload_to_server" string="开始同步" type="object" class="oe_highlight"/>
+                </form>
+            </field>
+        </record>
+
+    </data>
+
+    <data>
+        <act_window
+                multi="False"
+                id="res_partner_info_share"
+                name="同步基础资料"
+                res_model="share.to.server"
+                src_model="res.partner"
+                view_mode="form"
+                target="new"
+                context="{}"
+                view_type="form"/>
+
+        <!--<act_window-->
+                <!--multi="False"-->
+                <!--id="product_product_info_share"-->
+                <!--name="同步基础资料"-->
+                <!--res_model="share.to.server"-->
+                <!--src_model="mtlcs_product.product.product"-->
+                <!--view_mode="form"-->
+                <!--target="new"-->
+                <!--context="{}"-->
+                <!--view_type="form"/>-->
+
+        <!--<act_window-->
+                <!--multi="False"-->
+                <!--id="product_template_info_share"-->
+                <!--name="同步基础资料"-->
+                <!--res_model="share.to.server"-->
+                <!--src_model="mtlcs_product.product.template"-->
+                <!--view_mode="form"-->
+                <!--target="new"-->
+                <!--context="{}"-->
+                <!--view_type="form"/>-->
+    </data>
+
+</openerp>
